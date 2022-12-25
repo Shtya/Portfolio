@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import avatar from '../img/profile.jpg'
+import Works from './data';
 import work from '../img/work3.jpg'
-
 import work1 from '../img/work1.jpg'
 import work2 from '../img/work2.jpg'
 import work3 from '../img/work3.jpg'
@@ -52,7 +52,8 @@ const Home = () => {
           <li><a target="_blank" href="https://github.com/Shtya"><i className="fa-brands fa-github"></i></a></li>
           <li><a target="_blank" href="https://www.linkedin.com/in/ahmed-abdelrhman-78bb18230/"><i className="fa-brands fa-linkedin"></i></a></li>
         </ul>
-      </div>
+        <a className='Download' href="AhmedShtya.pdf" download>Download CV</a>
+        </div>
       </section>
       <section className="about" id="about">
       <div className="container">
@@ -143,8 +144,22 @@ const Home = () => {
       </section>
       <section className="work" id="work">
 
-          <div className="container">
-        <div className="box">
+        <div className="container">
+          {
+            Works.map((e , idx) => {
+              return (
+                <div className="box" key={idx}>
+                  <img src={e.img} alt="" />
+                  <h2>{e.title }</h2>
+                  <div className="content">
+                  <a href={e.visit}  target="_blank" className="page"  > <i className="fa-solid fa-eye"></i>  </a>
+                  <a href={e.github} target="_blank" className="code"> <i className="fa-brands fa-github"></i>  </a>
+                  </div>
+                  </div>
+              )
+            })
+          }
+        {/* <div className="box">
             <img src={work1} alt="" />
             <div className="content">
               <a  href="https://shtya.github.io/Dashboard/" target="_blank" className="page"><i className="fa-solid fa-eye"></i></a>
@@ -187,7 +202,7 @@ const Home = () => {
               <a  href="https://shtya.github.io/Dashboard/" target="_blank" className="page"><i className="fa-solid fa-eye"></i></a>
               <a className="code" target="_blank" href="https://github.com/Shtya/Dashboard"><i className="fa-brands fa-github"></i> </a>
             </div>
-        </div>
+        </div> */}
 
           </div>
       </section>

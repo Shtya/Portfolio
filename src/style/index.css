@@ -114,6 +114,8 @@ nav .logo {
   font-family: "Diplomata SC", cursive;
   color: transparent;
   -webkit-text-stroke: 1px var(--black);
+  letter-spacing: -1px;
+  font-variant: small-caps;
 }
 nav ul {
   display: flex;
@@ -204,7 +206,7 @@ nav ul li::after {
   width: 0;
   transition: 0.5s;
   height: 100%;
-  background: linear-gradient(to left, var(--orange), white);
+  background: linear-gradient(to right, var(--black), white);
 }
 nav ul li a {
   position: absolute;
@@ -212,11 +214,11 @@ nav ul li a {
   height: 100%;
   display: flex;
   justify-content: center;
-  z-index: 4;
+  z-index: 7;
   font-weight: bold;
   color: transparent;
-  -webkit-text-stroke: 1px var(--black);
-  letter-spacing: -1px;
+  -webkit-text-stroke: 2px var(--black);
+  letter-spacing: 1px;
 }
 nav .toggle {
   display: none;
@@ -505,6 +507,25 @@ nav .toggle {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
 }
+.home .Download {
+  color: white;
+  width: 142px;
+  position: relative;
+  display: block;
+  top: 30px;
+  left: -48%;
+  padding: 5px 10px;
+  text-align: center;
+  background-color: var(--black);
+  letter-spacing: -1px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.home .Download:hover {
+  opacity: 0.9;
+}
 
 .about {
   overflow: hidden;
@@ -749,18 +770,18 @@ nav .toggle {
   position: absolute;
   top: -37px;
   font-size: 17px;
-  background-color: #4a78b7;
+  background-color: var(--black);
   padding: 4px;
   border-radius: 4px;
   right: -15px;
   color: transparent;
-  -webkit-text-stroke: 0.6px black;
+  -webkit-text-stroke: 0.6px white;
 }
 .skills .container .box .progress span::after {
   content: "";
   position: absolute;
   border: 10px solid transparent;
-  border-top-color: #4a78b7;
+  border-top-color: var(--black);
   top: -12px;
   right: -9px;
 }
@@ -792,7 +813,7 @@ nav .toggle {
   position: relative;
   display: grid;
   width: 90%;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
 }
 @media (max-width: 900px) {
@@ -815,6 +836,7 @@ nav .toggle {
   margin: auto;
   -webkit-animation: despear 6s forwards;
           animation: despear 6s forwards;
+  border: 2px solid var(--black);
 }
 .work .container .box:nth-child(1) {
   -webkit-animation-duration: 0.5s;
@@ -879,6 +901,9 @@ nav .toggle {
   transform: scale(1.2) rotate(8deg);
   opacity: 0.7;
 }
+.work .container .box:hover h2 {
+  left: 50%;
+}
 .work .container .box:hover .content {
   bottom: 20px;
 }
@@ -917,6 +942,18 @@ nav .toggle {
   font-size: 25px;
   -webkit-text-stroke: 2px black;
   color: transparent;
+}
+.work .container .box h2 {
+  transition: 0.5s;
+  position: absolute;
+  top: 10px;
+  color: transparent;
+  letter-spacing: -1px;
+  -webkit-text-stroke: 1.5px black;
+  left: 140%;
+  transform: translateX(-50%);
+  font-weight: normal;
+  white-space: nowrap;
 }
 
 .contact {
@@ -986,6 +1023,15 @@ nav .toggle {
   max-width: 500px;
   min-width: 500px;
 }
+.contact form .box .Message:focus::-moz-placeholder {
+  opacity: 0;
+}
+.contact form .box .Message:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+.contact form .box .Message:focus::placeholder {
+  opacity: 0;
+}
 @media (max-width: 600px) {
   .contact form .box .Message {
     max-width: 400px;
@@ -1010,6 +1056,9 @@ nav .toggle {
   font-size: 19px;
   color: orange;
   transition: 0.5s ease-out;
+}
+.contact form .Submit {
+  transition: 0.5s;
 }
 @media (max-width: 600px) {
   .contact form .Submit {
